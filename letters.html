@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Love Letters • Words From My Heart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #ff4d6d;
+      --pink: #ff8ab0;
+      --pale: #ffeef5;
+      --white: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --shadow: 0 8px 32px rgba(255, 77, 109, 0.12);
+      --radius: 22px;
+      --max-width: 960px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--pale) 0%, var(--white) 100%);
+      color: #694555;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+    }
+
+    nav {
+      width: 100%;
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      padding: .75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #694555;
+      background: #fce4ec;
+      padding: .55rem 1.4rem;
+      border-radius: 40px;
+      transition: background .25s;
+    }
+
+    .nav-link i {
+      font-size: 1rem;
+    }
+
+    .nav-link:hover {
+      background: var(--pink);
+      color: var(--white);
+    }
+
+    .nav-link:nth-child(4) {
+      background: var(--rose);
+      color: var(--white);
+    }
+
+    /* Active */
+
+    main {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.4rem;
+      color: var(--rose);
+      margin-bottom: .5rem;
+    }
+
+    header h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--pink);
+      opacity: .9;
+    }
+
+    .letters-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .letters-grid article {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      position: relative;
+    }
+
+    .letters-grid article h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: var(--rose);
+      margin-bottom: .8rem;
+    }
+
+    .letters-grid article p {
+      font-size: 1rem;
+      color: #4d3240;
+      line-height: 1.7;
+    }
+
+    @media(max-width: 680px) {
+      header h1 {
+        font-size: 2.7rem;
+      }
+
+      header h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .footer-note {
+      max-width: 960px;
+      margin: 4rem auto 2rem;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, #ffe5ef, #ffd6e0);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(255, 77, 109, 0.12);
+      text-align: center;
+    }
+
+    .footer-note h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+    }
+
+    .footer-note p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #694555;
+      margin: 0 auto;
+      max-width: 80ch;
+    }
+
+    .quote {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.35rem;
+      color: var(--pink);
+      margin: 3rem auto 4rem;
+      text-align: center;
+      padding: 0 1.2rem;
+      max-width: 700px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      /* You can increase this value for more space */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="nav-link" href="index.html"><i class="fa-solid fa-heart"></i>Birthday</a>
+      <a class="nav-link" href="ourjourney.html"><i class="fa-solid fa-camera-retro"></i>Our Moments</a>
+      <a class="nav-link" href="video.html"><i class="fa-solid fa-video"></i>Video</a>
+      <a class="nav-link"><i class="fa-solid fa-envelope-open-text"></i>Love Letters</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <header>
+      <h1>Love Letters</h1>
+      <h2>Words From My Heart</h2>
+    </header>
+    <section class="letters-grid">
+      <!-- Example letter -->
+      <article>
+        <h2>THE BGMI</h2>
+        <p>
+          Hey Love,
+
+        <p>Who would’ve thought that a simple Snap would lead to such an amazing adventure together? From the moment you
+          sent me your game ID, something just clicked. I still remember how excited I was to send you that friend
+          request—and how it felt when you accepted.
+        </p>
+
+        <p>Our first battles in Erangel were so much fun. It was as if every victory and every defeat pulled us closer,
+          letting us discover new things about each other.
+        </p>
+
+        <p>Then you introduced me to the Nusa map, and suddenly, our world in the game became even bigger—new places to
+          explore and new memories to create with you by my side.
+        </p>
+
+        <p>We’ve played so many matches together since then, and every single one has been special. It’s not really
+          about
+          winning or losing, but about those laughs we share in the lobby, those epic saves, and, most importantly,
+          having you as my favorite teammate.
+        </p>
+
+        <p>Thank you for making even the most ordinary matches unforgettable. I’m grateful for every moment, both in the
+          game and out, that I get to share with you. Here’s to countless more matches, more adventures, and a love
+          story that started with a Snap and keeps growing every day.
+        </p>
+        <p> Yours,<br> PAPACHI❤️ </p>
+        </p>
+      </article>
+      <article>
+        <p>
+        <h2>The Proposal</h2>
+        <p> Hey Love, </p>
+        <p> I still remember that magical night of Ganesh Chaturthi. It happened so suddenly—one moment we were just
+          ourselves, sharing laughs and little stories, and then, out of nowhere, I found myself pouring my heart out
+          and proposing to you. My heart was racing, unsure and excited all at once, and when you said “yes,” the world
+          felt like it had shifted just for us. </p>
+        <p> But it was what you asked next that truly touched me: “Will you convince my parents?” That question stayed
+          with me, deeper than anything else. In that moment, I realized how much this meant to both of us—not just our
+          journey together, but every step we’d have to walk with courage, honesty, and love. </p>
+        <p> Our story has grown stronger ever since. Every day, I feel more certain about us and about facing every
+          challenge, no matter how big or small, hand in hand. Just knowing that we began this chapter together, with
+          such honesty and hope, makes me even more committed to making it all work—for you, for us, and for the future
+          we dream of. </p>
+        <p> Thank you for being my partner through it all. Here’s to every step ahead—convincing, loving, and building
+          our story one day at a time. </p>
+        <p> Yours,<br> PAPACHI❤️ </p>
+        </p>
+      </article>
+      <article>
+        <h2>The Journey</h2>
+        <p> Hey Love, </p>
+        <p> From casual snaps to deep conversations, it all began with just a few filters and playful messages. Who knew
+          that behind every silly face and emoji, something real was growing? I found myself waiting for your snap,
+          smiling at your replies, and slowly, unknowingly, falling for you. </p>
+        <p> As the days went by, our conversations deepened. We moved past filters and selfies into late-night chats and
+          morning greetings. Those moments became the soft threads that stitched us closer. You became my comfort
+          space—someone I could laugh with, open up to, and be entirely myself around. </p>
+        <p> And then we met—truly met. That first time, my heart was racing. Your shy smile, the way you looked at me,
+          and the silence we both didn’t mind—it all felt surreal. It wasn’t just a meeting. It was magic unfolding in
+          front of my eyes. </p>
+        <p> Then came that unforgettable night—Ganesh Chaturthi. I don’t know what took over me, but suddenly, I found
+          myself telling you what I’d been feeling for so long. And you said “yes.” That moment shifted something inside
+          me. Everything felt lighter, warmer, right. </p>
+        <p> But what truly moved me was what came next: “Will you convince my parents?” That question hit deep. It
+          wasn’t just about us anymore—it was about everything we wanted to build. I knew then that this love was real,
+          serious, and worth every step. </p>
+        <p> Our journey since has been filled with the sweetest memories—meeting on weekends, eating our favorite food,
+          sharing laughs, and sitting quietly when words weren’t needed. Every hug, every goodbye, every plan for the
+          next time kept me going. </p>
+        <p> Of course, not every day was perfect. We faced our share of misunderstandings, distance, and tough moments.
+          But through it all, we chose each other. Again and again. And that’s what love is, isn’t it? Not perfect, but
+          persistent. </p>
+        <p> We’ve grown together—learning, unlearning, supporting, and loving. You’ve been my biggest strength and my
+          safest place. And with every moment, I feel more certain about us, our journey, and the life we’re slowly
+          building. </p>
+        <p> I know there’s still a long road ahead—many more steps, many more moments to cherish, and yes, many more
+          challenges to face. But I’m ready. With you by my side, I’m ready for it all. </p>
+        <p> Forever yours,<br> PAPACHI ❤️ </p>
+      </article>
+      <article>
+        <h2>The Future</h2>
+        <p> Hey Love, </p>
+        <p> As I sit and think about everything we’ve been through, my heart fills with gratitude—not just for our past,
+          but for everything we’re yet to build. We've come a long way, and yet the most beautiful part is knowing how
+          much more lies ahead of us. </p>
+        <p> I promise to stand by you through every academic milestone. Whether it's preparing for exams, cheering you
+          on through interviews, or simply helping you stay calm during the stress of it all—I will be your biggest
+          supporter. Your growth inspires me, and together, I know we’ll keep pushing each other to become the best
+          versions of ourselves. </p>
+        <p> Spiritually too, I promise to grow with you. To find peace in the little things, to pray not just for
+          myself, but for our future, and to always believe that there's a higher power watching over our journey. I
+          will sit with you in silence when you need strength, and I will whisper hope into your heart when the world
+          feels heavy. </p>
+        <p> Most of all, I promise to nurture our togetherness. To protect the bond we’ve built, to be present in both
+          the ordinary and the extraordinary moments. Whether it's sitting in a cafe after a long week, taking a walk
+          under the stars, or simply doing nothing together—I’ll treasure it all. </p>
+        <p> I know life won't always be smooth. There will be days when we feel tired, unsure, or even distant. But in
+          those moments, I promise to remember why we began. I promise to communicate with kindness, to forgive with an
+          open heart, and to hold onto the love we chose every single day. </p>
+        <p> With every success we achieve—individually or together—I want us to celebrate not just the destination, but
+          the journey we took to get there. I want to build a future with you that is not just filled with achievements,
+          but with meaning, balance, and peace. </p>
+        <p> So here’s my vow: to grow with you, dream with you, cry and laugh with you, and walk beside you in every
+          season—until forever doesn't feel long enough. </p>
+        <p> With all my heart,<br> PAPACHI ❤️ </p>
+      </article>
+
+      <!-- Duplicate & edit for each letter -->
+    </section>
+    <!-- FOOTER NOTE -->
+    <section class="footer-note">
+      <h3>A Note About These Letters</h3>
+      <p>
+        These letters represent just a fraction of the thoughts and feelings I have for you every day. Each one was
+        written from the heart, in moments when I was overwhelmed by how much I love you. I hope they remind you, today
+        and always, that you are cherished, valued, and deeply loved.
+      </p>
+    </section>
+
+  </main>
+  <p class="quote">"Loving you is like breathing — I can’t stop, and I don’t want to."💕</p>
+</body>
+
+</html>

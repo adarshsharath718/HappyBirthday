@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday • Beautiful Soul</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <!-- Optional: Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --rose:#ff4d6d;
+      --pink:#ff8ab0;
+      --pale:#ffebf2;
+      --white:#ffffff;
+      --card:#ffeef5f7;
+      --shadow:0 8px 32px rgba(255,77,109,.12);
+      --radius:22px;
+      --max:960px;
+    }
+
+    /* RESET */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,var(--pale) 0%,var(--white) 100%);
+      color:#694555;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      overflow-x:hidden;
+    }
+
+    /* NAVIGATION */
+    nav{
+      width:100%;
+      background:var(--white);
+      box-shadow:0 4px 12px rgba(0,0,0,.04);
+      padding:.75rem 0;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .nav-wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+      gap:.5rem;
+    }
+    .nav-link{
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+      font-size:.95rem;
+      font-weight:500;
+      color:#694555;
+      background:#fce4ec;
+      padding:.55rem 1.4rem;
+      border-radius:40px;
+      text-decoration:none;
+      transition:background .25s;
+    }
+    .nav-link i{font-size:1rem;}
+    .nav-link.active{
+      background:var(--rose);
+      color:var(--white);
+    }
+    .nav-link:not(.active):hover{
+      background:var(--pink);
+      color:var(--white);
+    }
+
+    /* DECOR */
+    .floating{
+      pointer-events:none;
+      position:absolute;
+      animation:float 14s linear infinite;
+      opacity:.2;
+    }
+    .floating:nth-child(1){left:6%;top:15%;animation-delay:-2s;scale:.9;}
+    .floating:nth-child(2){right:8%;top:30%;animation-delay:-6s;scale:.8;}
+    .floating:nth-child(3){left:12%;bottom:25%;animation-delay:-9s;scale:.7;}
+    @keyframes float{
+      0%{transform:translateY(0)}
+      100%{transform:translateY(-130vh)}
+    }
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      margin:3.5rem auto 2.5rem;
+      padding:0 1rem;
+      position:relative;
+    }
+    .hero .star{
+      font-size:1.6rem;
+      color:var(--rose);
+      margin-bottom:.6rem;
+    }
+    h1{
+      font-family:'Great Vibes',cursive;
+      font-size:3.4rem;
+      color:var(--rose);
+      line-height:1.1;
+    }
+    h2{
+      font-family:'Great Vibes',cursive;
+      font-size:2.2rem;
+      color:var(--pink);
+      margin-top:.2rem;
+      opacity:.9;
+    }
+
+    /* MESSAGE CARD */
+    .card{
+      max-width:var(--max);
+      background:var(--card);
+      margin:2.5rem auto;
+      padding:3rem 2.4rem 2.6rem;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .card .heart{
+      font-size:1.7rem;
+      color:var(--rose);
+      margin-bottom:1.2rem;
+    }
+    .card .big{
+      font-size:1.25rem;
+      font-weight:600;
+      line-height:1.8;
+      margin-bottom:1.5rem;
+      color:#4d3240;
+    }
+    .card .small{
+      font-size:1rem;
+      line-height:1.8;
+      color:#7c6570;
+      max-width:650px;
+      margin:0 auto;
+    }
+
+    /* QUICK LINKS */
+    .grid{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1.3rem;
+      margin:3rem auto 2.2rem;
+      max-width:var(--max);
+    }
+    .grid .box{
+      background:var(--white);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      width:180px;
+      padding:1.5rem 1.2rem 1.4rem;
+      text-align:center;
+      cursor:pointer;
+      transition:transform .2s,background .2s;
+    }
+    .grid .box:hover{
+      transform:translateY(-5px);
+      background:#fff4f8;
+    }
+    .box .icon{
+      font-size:2rem;
+      color:var(--rose);
+      margin-bottom:.6rem;
+    }
+    .box .label{
+      font-family:'Great Vibes',cursive;
+      font-size:1.4rem;
+      color:var(--rose);
+      margin-bottom:.3rem;
+    }
+    .box .desc{
+      font-size:.9rem;
+      color:#7c6570;
+      line-height:1.45;
+    }
+
+    /* CTA BUTTON */
+    .cta{
+      background:linear-gradient(90deg,var(--rose),var(--pink));
+      color:var(--white);
+      border:none;
+      border-radius:40px;
+      padding:1rem 2.4rem;
+      font-size:1.05rem;
+      font-weight:600;
+      letter-spacing:.05em;
+      cursor:pointer;
+      box-shadow:0 6px 22px rgba(255,77,109,.25);
+      transition:opacity .25s;
+    }
+    .cta i{margin-left:.5rem;}
+    .cta:hover{opacity:.9;}
+
+    /* FOOTER QUOTE */
+    .quote{
+      font-family:'Great Vibes',cursive;
+      font-size:1.35rem;
+      color:var(--pink);
+      margin:3rem auto 4rem;
+      text-align:center;
+      padding:0 1.2rem;
+      max-width:700px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:680px){
+      h1{font-size:2.7rem;}
+      h2{font-size:1.8rem;}
+      .grid{gap:1rem;}
+      .grid .box{width:150px;}
+      .hero-photo img{max-width:280px;}
+    }
+
+
+    /* PHOTO STYLING - NEW */
+.hero-photo{
+  margin:2rem auto 1.5rem;
+  text-align:center;
+}
+.hero-photo img{
+  max-width:320px;
+  width:90%;
+  height:auto;
+  border-radius:var(--radius);
+  box-shadow:0 8px 32px rgba(255,77,109,.15);
+  border:4px solid var(--white);
+  transition:transform .3s ease;
+}
+.hero-photo img:hover{
+  transform:scale(1.02);
+}
+/* PHOTO STYLING - UPDATED FOR EXPANDED SIZE */
+.hero-photo{
+  margin:0 auto; /* Removed top/bottom margins */
+  text-align:center;
+}
+.hero-photo img{
+    margin-top: 50px;
+  max-width:640px; /* Double the horizontal size (was 320px) */
+  width:90%;
+  height:auto;
+  border-radius:var(--radius);
+  box-shadow:0 8px 32px rgba(255,77,109,.15);
+  border:4px solid var(--white);
+  transition:transform .3s ease;
+}
+.hero-photo img:hover{
+  transform:scale(1.02);
+}
+
+/* RESPONSIVE - UPDATED */
+@media(max-width:680px){
+  .hero-photo img{
+    max-width:560px; /* Double the mobile size (was 280px) */
+    width:95%;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Floating confetti / flower emojis -->
+  <span class="floating">🌸</span>
+  <span class="floating">🌼</span>
+  <span class="floating">💮</span>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="nav-link active"><i class="fa-solid fa-heart"></i>Birthday</a>
+      <a class="nav-link" href="ourjourney.html"><i class="fa-solid fa-camera-retro"></i>Our Moments</a>
+      <a class="nav-link" href="video.html"><i class="fa-solid fa-video"></i>Video</a>
+      <a class="nav-link" href="letters.html"><i class="fa-solid fa-envelope"></i>Love Letters</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="star"><i class="fa-solid fa-star"></i></div>
+    <h1>Happy Birthday</h1>
+    <h2>Sunaina😘❤️</h2>
+    <!-- PHOTO ADDED HERE - Replace with your girlfriend's photo -->
+<div class="hero-photo">
+  <img src="bday-college.png" alt="Beautiful memories of us together" />
+</div>
+
+  </header>
+
+  <!-- MESSAGE CARD -->
+  <section class="card">
+    <div class="heart"><i class="fa-solid fa-heart"></i></div>
+    <p class="big">
+      Today is all about celebrating the most incredible person I know – YOU!<br>
+      From the moment you came into my life, every day became brighter, every smile became wider, and every dream became possible.
+    </p>
+    <p class="small">
+      I Love You so much muddu baby you mean the world to me 😘😘..Thank You for being with me Bubu😘😘 Happppppyyyyyyyy Birthday my Mudduuu babbyyyyyyyyyyyyy😘😘😘❤️❤️❤️</p>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="grid">
+    <div class="box" onclick="location.href='ourjourney.html'">
+      <div class="icon"><i class="fa-solid fa-camera"></i></div>
+      <div class="label">Our Journey</div>
+      <div class="desc">13 beautiful moments<br>that wrote our love story</div>
+    </div>
+    <div class="box" onclick="location.href='video.html'">
+      <div class="icon"><i class="fa-solid fa-gift"></i></div>
+      <div class="label">Special Message</div>
+      <div class="desc">A birthday video<br>made with all my love</div>
+    </div>
+    <div class="box" onclick="location.href='letters.html'">
+      <div class="icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <div class="label">Love Letters</div>
+      <div class="desc">Words from my heart,<br>written just for you</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <button class="cta" onclick="location.href='ourjourney.html'">
+    Start Our Journey <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+  <!-- FOOTER QUOTE -->
+  <p class="quote">“In a world full of temporary things, you are a feeling that lasts forever.”💕</p>
+</body>
+</html>

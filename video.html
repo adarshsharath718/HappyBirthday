@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Birthday Video • Play Your Message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #ff4d6d;
+      --pink: #ff8ab0;
+      --pale: #ffeef5;
+      --white: #ffffff;
+      --card-bg: rgba(255,255,255,0.9);
+      --shadow: 0 8px 32px rgba(255,77,109,0.12);
+      --radius: 22px;
+      --max-width: 960px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--pale) 0%, var(--white) 100%);
+      color: #694555;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      width:100%;
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      padding: .75rem 0;
+      position: sticky;
+      top:0; z-index:100;
+    }
+    .nav-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .nav-link {
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .95rem; font-weight: 500;
+      text-decoration: none; color: #694555;
+      background: #fce4ec; padding: .55rem 1.4rem;
+      border-radius: 40px; transition: background .25s;
+    }
+    .nav-link i { font-size:1rem; }
+    .nav-link:hover { background: var(--pink); color: var(--white); }
+    .nav-link.active { background: var(--rose); color: var(--white); }
+
+    main {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.4rem;
+      color: var(--rose);
+      margin-bottom: .5rem;
+    }
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--pink);
+      margin-bottom: 2rem;
+      opacity: .9;
+    }
+    .video-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-card video {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+      padding: .75rem 1.6rem;
+      background: var(--rose);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      animation: heartbeat 1.5s infinite;
+      box-shadow: 0 4px 12px rgba(255,77,109,0.4);
+      transition: transform .2s;
+    }
+    .play-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255,77,109,0.5);
+    }
+    @keyframes heartbeat {
+      0%,100% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: .95rem;
+      color: #8b6b73;
+      line-height: 1.6;
+    }
+    @media (max-width: 680px) {
+      h1 { font-size:2.7rem; }
+      h2 { font-size:1.8rem; }
+      .play-btn { width: 100%; justify-content: center; }
+    }
+    .quote{
+      font-family:'Great Vibes',cursive;
+      font-size:1.35rem;
+      color:var(--pink);
+      margin:3rem auto 4rem;
+      text-align:center;
+      padding:0 1.2rem;
+      max-width:700px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="nav-link" href="index.html"><i class="fa-solid fa-heart"></i>Birthday</a>
+      <a class="nav-link" href="ourjourney.html"><i class="fa-solid fa-camera-retro"></i>Our Moments</a>
+      <a class="nav-link active" href="#"><i class="fa-solid fa-video"></i>Video</a>
+      <a class="nav-link" href="letters.html"><i class="fa-solid fa-envelope-open-text"></i>Love Letters</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Play Birthday Message</h1>
+    <h2>From My Heart to Yours</h2>
+
+    <div class="video-card">
+      <video id="wishVid" poster="assets/photos/meet1.jpg">
+        <source src="birthday.mp4" type="video/mp4" />
+        Your browser doesn’t support embedded video.
+      </video>
+
+      <button class="play-btn" id="playBtn">
+        <i class="fa-solid fa-play"></i>
+        Play Birthday Message
+      </button>
+
+      <p class="description">
+        This video was made with all my love, just for you. Every word comes from the deepest part of my heart. You mean everything to me, and today, on your special day, I want you to know just how incredibly blessed I feel to have you in my life.
+      </p>
+    </div>
+  </main>
+  <p class="quote">"I look at you and see the rest of my life in your eyes."💕</p>
+
+  <script>
+    const video = document.getElementById('wishVid');
+    const btn = document.getElementById('playBtn');
+    btn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause Message';
+      } else {
+        video.pause();
+        btn.innerHTML = '<i class="fa-solid fa-play"></i> Play Birthday Message';
+      }
+    });
+  </script>
+</body>
+</html>

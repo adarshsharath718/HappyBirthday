@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Our Moments • Our Journey</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --rose: #ff4d6d;
+      --pink: #ff8ab0;
+      --pale: #ffebf2;
+      --white: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --shadow: 0 8px 32px rgba(255, 77, 109, 0.12);
+      --radius: 22px;
+      --max-width: 960px;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--pale) 0%, var(--white) 100%);
+      color: #694555;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      padding: .75rem 0;
+    }
+    .nav-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .nav-link {
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .95rem; font-weight: 500;
+      text-decoration: none; color: #694555;
+      background: #fce4ec; padding: .55rem 1.4rem;
+      border-radius: 40px; transition: background .25s;
+    }
+    .nav-link i { font-size: 1rem; }
+    .nav-link:hover { background: var(--pink); color: var(--white); }
+    .nav-link.active { background: var(--rose); color: var(--white); }
+
+    main {
+      max-width: var(--max-width);
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem; color: var(--rose);
+      text-align: center; margin-bottom: 1rem;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 2rem; padding-right: 2rem;
+    }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 50%; top: 0; transform: translateX(-50%);
+      width: 4px; height: 100%; background: var(--rose);
+    }
+    .item {
+      position: relative;
+      margin: 2.5rem 0;
+      width: 50%; padding: 1rem 2rem;
+    }
+    .item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    .item::before {
+      content: ''; position: absolute;
+      top: 1.5rem; width: 16px; height: 16px;
+      background: var(--white); border: 4px solid var(--rose);
+      border-radius: 50%;
+    }
+    .item:nth-child(odd)::before {
+      right: -8px;
+    }
+    .item:nth-child(even)::before {
+      left: -8px;
+    }
+    .item .date {
+      font-size: .9rem; color: #8b6b73; margin-bottom: .3rem;
+    }
+    .item .location {
+      font-weight: 600; color: #4d3240; margin-bottom: .8rem;
+    }
+    .item .desc {
+      background: var(--card-bg);
+      padding: 1rem; border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .item .desc img {
+      width: 100%; height: auto; border-radius: var(--radius);
+      margin-bottom: .8rem; object-fit: cover;
+    }
+
+    @media(max-width: 768px) {
+      .timeline::before { left: 8px; }
+      .item, .item:nth-child(even) { left: 0; width: 100%; text-align: left; padding-left: 3rem; }
+      .item::before { left: 0; }
+    }
+    .quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem auto 2rem;
+  max-width: 960px;
+}
+.quick-link-card {
+  flex: none;
+  width: 180px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(255, 77, 109, 0.12);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.quick-link-card:hover {
+  transform: translateY(-5px);
+  background: #fff4f8;
+}
+.quick-link-card .icon {
+  font-size: 2rem;
+  color: #ff4d6d;
+  margin-bottom: 0.5rem;
+}
+.quick-link-card .label {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.3rem;
+  color: #ff4d6d;
+  margin-bottom: 0.3rem;
+}
+.quick-link-card .desc {
+  font-size: 0.9rem;
+  color: #7c6570;
+  line-height: 1.4;
+}
+
+.quote{
+      font-family:'Great Vibes',cursive;
+      font-size:1.35rem;
+      color:var(--pink);
+      margin:3rem auto 4rem;
+      text-align:center;
+      padding:0 1.2rem;
+      max-width:700px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrap">
+      <a class="nav-link" href="index.html"><i class="fa-solid fa-heart"></i>Birthday</a>
+      <a class="nav-link active" href="#"><i class="fa-solid fa-camera-retro"></i>Our Moments</a>
+      <a class="nav-link" href="video.html"><i class="fa-solid fa-video"></i>Video</a>
+      <a class="nav-link" href="letters.html"><i class="fa-solid fa-envelope-open-text"></i>Love Letters</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Our Beautiful Journey</h1>
+    <section class="timeline">
+
+      <!-- Repeat this .item block for each of your 13 meets -->
+      <div class="item">
+        <div class="date">November 1, 2024</div>
+        <div class="location">Mundgod-Sirsi Bus</div>
+        <div class="desc">
+          <img src="meet1.jpg" alt="Meet 1 photo">
+          <p>❤️❤️The day our story began. I was so nervous that day but the scooty ride we had was so memorable and we travelled from mundgod to sirsi❤️❤️</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="date">November 24, 2024</div>
+        <div class="location">Sirsi-Mysore Bus</div>
+        <div class="desc">
+          <img src="meet2.jpg" alt="Meet 2 photo">
+          <p>❤️❤️This meet was also similar to last meet but this meet was too special😘😘..❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">February 16, 2024</div>
+        <div class="location">Divinity Mall, Bengaluru</div>
+        <div class="desc">
+          <img src="meet3.jpg" alt="Meet 3 photo">
+          <p>❤️❤️Our first real date. We walked for hours and talked about everything😘😘😘...This was the first time we walked for those many hours oh my god love u baby😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">March 2, 2024</div>
+        <div class="location">Divinity Mall, Bengaluru</div>
+        <div class="desc">
+          <img src="meet4.jpg" alt="Meet 4 photo">
+          <p>❤️❤️This was also same like the previos meet it was so fun we went to movies and chilled the whole day... man it was just awesome Thank for being with me baby😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">March 8, 2024</div>
+        <div class="location">Mysore-Sirsi Bus</div>
+        <div class="desc">
+          <img src="meet5.jpg" alt="Meet 5 photo">
+          <p>❤️❤️This was our third time trabvelling through the bus together it was also one of the most memorable bus rides we had togethe. We travelled togrther from mysore to sirsi❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">March 10, 2024</div>
+        <div class="location">Sirsi</div>
+        <div class="desc">
+          <img src="meet6.jpg" alt="Meet 6 photo">
+          <p>❤️❤️This was our first meet in sirsi itself. we met in devikere and then we went to have ice cream. A short and sweet date😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">April 13, 2024</div>
+        <div class="location">Divinity mall, Bengaluru</div>
+        <div class="desc">
+          <img src="meet7.jpg" alt="Meet 7 photo">
+          <p>❤️❤️This meet was also same as the regular meet we have always went to the movie jad some snacks and chilled but there was a twist instead of letting her go i requested her to allow me to come with her and tadaaaa we again travellled through bus from banglore to mysore and we met the next day😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">March 14, 2024</div>
+        <div class="location">Mysore</div>
+        <div class="desc">
+          <img src="meet8.jpg" alt="Meet 8 photo">
+          <p>❤️❤️This meet was the continuatiom of the previous meet we explored mysore we went to mysore palace,karanji lake and rail meuseum ... I love u muddu baby😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">May 3, 2025</div>
+        <div class="location">Divinity Mall, Bengaluru</div>
+        <div class="desc">
+          <img src="meet9.jpg" alt="Meet 9 photo">
+          <p>❤️❤️Again this meet was the frist day of th 2 day meet we had As usual you came to banglore from mysore and we went to movie and we travelled back to mysore together❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">May 4, 2025</div>
+        <div class="location">Mysore</div>
+        <div class="desc">
+          <img src="meet10.jpg" alt="Meet 10 photo">
+          <p>❤️❤️This meet was the second day of our meet we really enjoyed the day it was so great to hangout with  you😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">May 11, 2025</div>
+        <div class="location">Mysore</div>
+        <div class="desc">
+          <img src="meet11.jpg" alt="Meet 11 photo">
+          <p>❤️❤️This meet we had after you returned from sirsi and we celebrated Chotu's birthday it was amazing we had great photos of ours😘😘😘 yet agian i was sad when it was time to return tho you had exams the next day you went to your room and studied and came back and we went to palace to see lightning woooo it was amazing😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">June 10, 2025</div>
+        <div class="location">Divinity Mall, Bengaluru</div>
+        <div class="desc">
+          <img src="meet12.jpg" alt="Meet 12 photo">
+          <p>❤️❤️We met the day before you were leaving for sirsi.. we went to the movie ad we had some good snacks and at the end you gave me my Birthday Gift ... Mannnn it was awesome I love You Baby😘😘❤️❤️ </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">June 30, 2025</div>
+        <div class="location">Marikamba Temple, Sirsi</div>
+        <div class="desc">
+          <img src="meet13.jpg" alt="Meet 13 photo">
+          <p>❤️❤️This meet was one of the dream meets i have ever thought of us going to marikaba temple was something very very special we took the blessings and we went to the dentist and then we had some snacks and we went home😘😘❤️❤️</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">July 2, 2025</div>
+        <div class="location">Sirsi</div>
+        <div class="desc">
+          <img src="meet14.jpg" alt="Meet 14 photo">
+          <p>❤️❤️This meet was like unplanned and suddenly i forced you to meet once again we met and we booked tickets for the movie but the thetare was empty so we couldnt watch the movie no issues just watching you makes my day you makes my day my baby😘😘❤️❤️</p>
+        </div>
+      </div>
+
+      <!-- …continue up to 13 items… -->
+
+    </section>
+      <!-- Quick-Links Section -->
+  <section class="quick-links">
+    <div class="quick-link-card" onclick="location.href='index.html'">
+      <div class="icon"><i class="fa-solid fa-heart"></i></div>
+      <div class="label">Birthday</div>
+      <div class="desc">A heartfelt birthday greeting</div>
+    </div>
+    <div class="quick-link-card" onclick="location.href='video.html'">
+      <div class="icon"><i class="fa-solid fa-video"></i></div>
+      <div class="label">Special Message</div>
+      <div class="desc">A birthday video made with all my love</div>
+    </div>
+    <div class="quick-link-card" onclick="location.href='letters.html'">
+      <div class="icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <div class="label">Love Letters</div>
+      <div class="desc">Words from my heart, written just for you</div>
+    </div>
+  </section>
+
+  </main>
+  <p class="quote">"Every love story is special, but ours is my favorite adventure."💕</p>
+
+</body>
+</html>
